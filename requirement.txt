@@ -1,0 +1,11 @@
+# Core dependency for browser automation
+playwright==1.49.0
+
+# Optional: ensures proper email handling and validation
+email-validator==2.2.0
+
+# Time and HTTP utilities (safe defaults)
+requests==2.32.3
+
+# Required for Playwright's headless Chromium
+# (you’ll still need to run "playwright install chromium" in Render)
