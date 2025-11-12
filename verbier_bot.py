@@ -13,7 +13,7 @@ SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 587
 SMTP_USER = os.environ["SMTP_USER"]        # your Gmail address
 SMTP_PASS = os.environ["SMTP_PASS"]
-EMAIL_TO   = ["arthur.dattin@gmail.com","noe.nomblot@epfl.ch"]       # destinatario (può essere uguale)
+EMAIL_TO   = ["gerry.sergi@gmail.com", "terzuoli11@gmail.com","alicepotter02@gmail.com","francesco.stup@gmail.com","antonblaise@gmail.com","maxime.barre@epfl.ch","arthur.dattin@gmail.com","noe.nomblot@epfl.ch"]       # destinatario (può essere uguale)
 # ============================================
 
 
@@ -21,14 +21,22 @@ def send_email_available():
     msg = MIMEMultipart()
     msg["From"] = SMTP_USER
     msg["To"] = ", ".join(EMAIL_TO)
-    msg["Subject"] = " Dio cane !!! Verbier tickets: AVAILABLE"
+    msg["Subject"] = "Verbier tickets: AVAILABLE"
     body = (
-        "GO GO GOOOOOOOO!\n\n"
-        "It seems that the tickets are no longer marked as 'Épuisé'.\n"
-        "Hurry up and grab your tickets! To become the best Christmas Father :)\n\n"
-        f"Check here: {URL}\n"
-        "\n"
-    )
+    "ALERT \n\n"
+    "Verbier tickets are BACK! \n"
+    "Stop whatever you’re doing\n"
+    "Powder waits for no one ❄️⛷️\n\n"
+    f"👉 Get them before they vanish: {URL}\n\n"
+    "–––––––––––––––––––––––––––––––––––––––––––\n"
+    "🇮🇹 *Versione italiana:*\n"
+    " ALLERTA \n\n"
+    "I biglietti per Verbier sono TORNATI! \n"
+    "Lascia tutto ! \n"
+    "La neve non aspetta nessuno ⛷️💨\n\n"
+    f"👉 Prendili subito: {URL}\n"
+)
+
     msg.attach(MIMEText(body, "plain"))
 
     with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as server:
@@ -100,7 +108,7 @@ def monitor(interval_seconds=300):
                 print("❗ errore durante il check:", e)
                 status = None
 
-            if status is False:
+            if status is True:
                 # trovato disponibile → email → stop
                 send_email_available()
                 break
