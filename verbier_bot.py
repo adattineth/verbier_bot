@@ -13,7 +13,7 @@ SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 587
 SMTP_USER = os.environ["SMTP_USER"]        # your Gmail address
 SMTP_PASS = os.environ["SMTP_PASS"]
-EMAIL_TO   = ["gerry.sergi@gmail.com", "terzuoli11@gmail.com","alicepotter02@gmail.com","francesco.stup@gmail.com","antonblaise@gmail.com","maxime.barre@epfl.ch","arthur.dattin@gmail.com","noe.nomblot@epfl.ch"]       # destinatario (può essere uguale)
+EMAIL_TO   = ["arthur.dattin@gmail.com","noe.nomblot@epfl.ch"]       # destinatario (può essere uguale)
 # ============================================
 
 
@@ -100,7 +100,7 @@ def monitor(interval_seconds=300):
                 print("❗ errore durante il check:", e)
                 status = None
 
-            if status is True:
+            if status is False:
                 # trovato disponibile → email → stop
                 send_email_available()
                 break
