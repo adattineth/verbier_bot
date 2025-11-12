@@ -111,4 +111,4 @@ def monitor(interval_seconds=300):
 
 if __name__ == "__main__":
     # controlla ogni 5 minuti (300 s).
-    monitor(interval_seconds=10)
+    monitor(interval_seconds=120)
