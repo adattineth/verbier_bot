@@ -3,14 +3,16 @@ import time
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+import os
 
 URL = "https://verbier4vallees.ch/fr/shop-en-ligne/activites/opening-session_activity_410650"
+
 
 # =============== CONFIG EMAIL ===============
 SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 587
-SMTP_USER = "arthur.dattin@gmail.com"         # <-- metti la tua
-SMTP_PASS = "ltmt hmhm qfau fnoo".replace(" ", "")     # <-- metti la tua app password
+SMTP_USER = os.environ["SMTP_USER"]        # your Gmail address
+SMTP_PASS = os.environ["SMTP_PASS"]
 EMAIL_TO   = ["gerry.sergi@gmail.com", "terzuoli11@gmail.com","alicepotter02@gmail.com","francesco.stup@gmail.com","antonblaise@gmail.com","maxime.barre@epfl.ch","arthur.dattin@gmail.com","noe.nomblot@epfl.ch"]       # destinatario (può essere uguale)
 # ============================================
 
