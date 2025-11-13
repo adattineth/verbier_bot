@@ -13,7 +13,7 @@ SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 587
 SMTP_USER = os.environ["SMTP_USER"]        # your Gmail address
 SMTP_PASS = os.environ["SMTP_PASS"]
-EMAIL_TO   = ["gerry.sergi@gmail.com", "terzuoli11@gmail.com","alicepotter02@gmail.com","francesco.stup@gmail.com","antonblaise@gmail.com","maxime.barre@epfl.ch","arthur.dattin@gmail.com","noe.nomblot@epfl.ch"]       # destinatario (può essere uguale)
+EMAIL_TO   = ["gerry.sergi@gmail.com", "terzuoli11@gmail.com","alicepotter02@gmail.com","francesco.stsup@gmail.com","antonblaise@gmail.com","maxime.barre@epfl.ch","arthur.dattin@gmail.com","noe.nomblot@epfl.ch"]       # destinatario (può essere uguale)
 # ============================================
 
 
@@ -121,4 +121,4 @@ def monitor(interval_seconds=300):
 
 if __name__ == "__main__":
     # controlla ogni 5 minuti (300 s).
-    monitor(interval_seconds=120)
+    monitor(interval_seconds=100)
