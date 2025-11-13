@@ -87,7 +87,7 @@ def check_once(page):
     if sold_out_locator.count() > 0:
         # tutto quello che c’è lo stampiamo
         slots = page.locator(".selection__item").all_inner_texts()
-        print("esauriti, slot trovati:", [s.strip() for s in slots])
+        # print("esauriti, slot trovati:", [s.strip() for s in slots])
         return False   # esauriti
     else:
         print("non c’è 'Epuisé' nella modale")
